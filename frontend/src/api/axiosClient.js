@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "https://ai-doc-platform-backend-deploy.onrender.com",
+  baseURL: "https://ai-doc-platform-backend-deploy.onrender.com",
   // If REACT_APP_API_URL is missing → use local backend
   // This is why Vercel kept calling http://127.0.0.1:8000
 });
