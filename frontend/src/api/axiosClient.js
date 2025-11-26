@@ -1,0 +1,18 @@
+// axiosClient.js — version that defaults to LOCALHOST
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: process.env.REACT_APP_API_URL || "https://ai-doc-platform-1.onrender.com",
+  // If REACT_APP_API_URL is missing → use local backend
+  // This is why Vercel kept calling http://127.0.0.1:8000
+});
+
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+export default api;
