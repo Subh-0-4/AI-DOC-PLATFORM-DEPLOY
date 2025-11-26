@@ -18,7 +18,7 @@ app = FastAPI(title="AI-DOC-PLATFORM Backend")
 origins = [
     "http://localhost:5173",
     "http://localhost:3000",
-    "https://ai-docplatform.vercel.app",
+    "https://ai-doc-platform-deploy.vercel.app",
 ]
 
 app.add_middleware(
